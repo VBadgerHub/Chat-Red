@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+
+
+:root {
+        --fontColor: #161616;
+        --mainColor: #691328;
+				--chatBackgroundColor: #000;
+        }
+
+.container{
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.namePlate{
+  position:relative;
+  font-family: 'Rationale', sans-serif;
+  width: fit-content;
+  height: 22px;
+  background: var(--mainColor);
+  color: var(--fontColor);
+  padding: 2px 5px 2px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+
+.namePlateContainer{
+  display: flex;
+}
+
+.slash{
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background: var(--mainColor);
+  overflow: hidden;
+}
+
+.slash::after{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 22px;
+  right: -10px;
+  top: -10px;
+  transform: rotate(35deg);
+  background: var(--chatBackgroundColor);
+}
+
+
+
+.msgContent{
+  font-family: 'Rationale', sans-serif;
+  border: 2px solid var(--mainColor);
+  color: var(--mainColor);
+  width: 300px;
+  padding: 2px 5px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.underMsgBar{
+  display: flex;
+  margin-top: 2px;
+}
+.mainBar{
+  width: 200px;
+  height: 2px;
+  background: var(--mainColor);
+}
+.smallBar{
+  width: 20px;
+  height: 2px;
+  margin-left: 5px;
+  background: var(--mainColor);
+  animation-name: barBottom;
+	animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes barBottom{
+    from {margin-left: 5px;}
+    to {margin-left: 80px;}
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+#log>div {
+    animation: fadeInBottom .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+    -webkit-animation: fadeInBottom .3s ease forwards, fadeOut 0.5s ease {message_hide_delay} forwards;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+.colon {
+    display: none;
+}
+
+#log {
+    display: table;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 10px 10px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#log>div {
+    display: table-row;
+}
+
+#log>div.deleted {
+    visibility: hidden;
+}
+
+#log .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0.4em 0.2em;
+    position: relative;
+}
+
+#log .emote img {
+    display: inline-block;
+    height: 1em;
+    opacity: 0;
+}
+
+#log .message,#log .meta {
+    vertical-align: top;
+    display: table-cell;
+    padding-bottom: 0.1em;
+}
+
+#log .meta {
+    width: 35%;
+    text-align: right;
+    padding-right: 0.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#log .message {
+    word-wrap: break-word;
+    width: 65%;
+}
+
+.badge {
+    display: inline-block;
+    margin-right: 0.2em;
+    position: relative;
+    height: 1em;
+    vertical-align: middle;
+    top: -0.1em;
+}
+
+.name {
+    margin-left: 0.2em;
+}

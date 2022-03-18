@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CZATERIADA</title>
+    <style>
+
+        @font-face {
+            font-family: "Rationale";
+            src: url("./Rationale/Rationale-Regular.ttf");
+        }
+
+        :root {
+        --fontColor: #161616;
+        --mainColor: #691328;
+
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            
+            font-family: 'Rationale';
+            background-color: #222;
+        }
+
+        .content{
+            margin-top: 100px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chatContener{
+            width: 500px;
+            height: 800px;
+            border: 9px solid var(--mainColor);
+            border-top: none;
+        }
+
+        .boxOne{
+            position: absolute;
+            width:80px;
+            left:12px;
+            border-top: 9px solid var(--mainColor);            
+        }
+
+        .boxTwo{
+            position: absolute;
+            width:80px;
+            right:12px;
+            border-top: 9px solid var(--mainColor);            
+        }
+
+        .contentWrapper{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .chatBox{
+            position: absolute;
+            content: '';
+            width: 300px;
+            height: 60px;
+            border-top: 9px solid var(--mainColor);
+            top: -50px;
+            color: var(--mainColor);
+            padding-top: 15px;
+            font-size: 50px;
+            text-align: center;        
+        }
+
+
+        #barLeft{
+            animation-name: barLeft;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;  
+        }
+
+        
+
+        @keyframes barLeft{
+            from {margin-top: 0;}
+            to {margin-top: 450px;}
+        }
+
+        #barRight{
+            animation-name: barRight;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;  
+        }
+
+        @keyframes barRight{
+            from {margin-bottom: 0;}
+            to {margin-bottom: 450px;}
+        }
+
+        .barMain{
+            background: var(--mainColor);
+            height: 300px;
+            width: 2px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        .barSmall{
+            height: 25px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+
+
+        .barContainer{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .barContainerDown{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="chatBox">CZATERIADA</div>
+        <div class="contentWrapper">
+            <div class="boxOne"></div>
+            <div class="boxTwo"></div>
+            <div class="barContainer">
+                <div class="barMain"></div>
+                <div id='barLeft' class="barMain barSmall"></div>
+            </div>
+            <div class="chatContener"></div>
+            <div class="barContainerDown">
+                <div id='barRight' class="barMain barSmall"></div>
+                <div class="barMain"></div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>
